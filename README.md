@@ -55,7 +55,7 @@ Usage
 
 ```js
 // CommonJS library distribution file (only default export)
-import exec from './libs/@suns-echoes/exec/index.js';
+import exec from '@suns-echoes/exec';
 // or
 const exec = require('@suns-echoes/exec');
 ```
