@@ -1,4 +1,4 @@
-import { join } from 'path';
+const { join } = require('path');
 
 import { copy } from '@suns-echoes/file-system-utils/src/utils/copy.js';
 
