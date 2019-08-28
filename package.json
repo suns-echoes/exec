@@ -1,13 +1,13 @@
 {
   "name": "@suns-echoes/exec",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Exec Utility",
   "scripts": {
     "coverage": "cross-env NODE_ENV=test nyc mocha",
     "test": "mocha",
     "test:watch": "cross-env NODE_ENV=test mocha --watch",
     "lint": "eslint .",
-    "dist": "node -r esm scripts/dist"
+    "dist": "npm run lint && npm run coverage && node -r esm scripts/dist"
   },
   "homepage": "https://github.com/suns-echoes/exec",
   "repository": {
@@ -38,7 +38,6 @@
     "esm": "^3.2.25",
     "mocha": "^6.2.0",
     "nyc": "^14.1.1",
-    "rollup": "^1.17.0",
-    "rollup-plugin-babel-minify": "^9.0.0"
+    "rollup": "^1.17.0"
   }
 }
