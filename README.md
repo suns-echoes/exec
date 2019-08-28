@@ -54,18 +54,20 @@ Usage
 -----
 
 ```js
-// import library distribution (only default export)
-import exec from './libs/exec/index.js';
+// CommonJS library distribution file (only default export)
+import exec from './libs/@suns-echoes/exec/index.js';
+// or
+const exec = require('@suns-echoes/exec');
 ```
 
 ```js
 // import library from source (default export)
-import exec from './libs/exec/src/index.js';
+import exec from './libs/@suns-echoes/exec/src/index.js';
 ```
 
 ```js
 // import library from source (named export)
-import { exec } from './libs/exec/src/exec.js';
+import { exec } from './libs/@suns-echoes/exec/src/exec.js';
 ```
 
 
