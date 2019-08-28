@@ -7,6 +7,7 @@ describe('exec', () => {
 
 		const result = await exec(cmd);
 
+		expect(result.error).to.be.null;
 		expect(result.output).to.match(/^v\d+\.\d+\.\d+$/);
 	});
 
@@ -16,6 +17,7 @@ describe('exec', () => {
 
 		const result = await exec(cmd, args, { buffer: false });
 
+		expect(result.error).to.be.null;
 		expect(result.output).to.be.null;
 	});
 
