@@ -1,43 +1,42 @@
 {
-  "name": "@suns-echoes/exec",
-  "version": "0.1.2",
-  "description": "Exec Utility",
-  "scripts": {
-    "coverage": "cross-env NODE_ENV=test nyc mocha",
-    "test": "mocha",
-    "test:watch": "cross-env NODE_ENV=test mocha --watch",
-    "lint": "eslint .",
-    "dist": "npm run lint && npm run coverage && node -r esm scripts/dist"
-  },
-  "homepage": "https://github.com/suns-echoes/exec",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/suns-echoes/exec"
-  },
-  "author": "Aneta Suns <suns.echoes@gmail.com>",
-  "license": "MIT",
-  "chaiAutoloadPlugins": {
-    "include": [
-      "chai-as-promised"
-    ]
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.5.5",
-    "@babel/core": "^7.5.5",
-    "@babel/node": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "@babel/register": "^7.5.5",
-    "@istanbuljs/nyc-config-babel": "^2.1.1",
-    "@suns-echoes/file-system-utils": "^0.5.1",
-    "babel-eslint": "^10.0.3",
-    "babel-plugin-istanbul": "^5.2.0",
-    "chai": "^4.2.0",
-    "cross-env": "^5.2.0",
-    "eslint": "^6.2.2",
-    "eslint-plugin-import": "^2.18.2",
-    "esm": "^3.2.25",
-    "mocha": "^6.2.0",
-    "nyc": "^14.1.1",
-    "rollup": "^1.17.0"
+	"name": "@suns-echoes/exec",
+	"version": "0.1.2",
+	"description": "Exec Utility",
+	"scripts": {
+	  "coverage": "cross-env NODE_ENV=test nyc mocha",
+	  "test": "mocha",
+	  "test:watch": "cross-env NODE_ENV=test mocha --watch",
+	  "lint": "eslint .",
+	  "dist": "npm run lint && npm run coverage && node -r esm scripts/dist"
+	},
+	"homepage": "https://github.com/suns-echoes/exec",
+	"repository": {
+	  "type": "git",
+	  "url": "https://github.com/suns-echoes/exec"
+	},
+	"author": "Aneta Suns <suns.echoes@gmail.com>",
+	"license": "MIT",
+	"chaiAutoloadPlugins": {
+	  "include": [
+		"chai-as-promised"
+	  ]
+	},
+	"devDependencies": {
+	  "@babel/cli": "^7.5.5",
+	  "@babel/core": "^7.5.5",
+	  "@babel/node": "^7.5.5",
+	  "@babel/preset-env": "^7.5.5",
+	  "@babel/register": "^7.5.5",
+	  "@istanbuljs/nyc-config-babel": "^2.1.1",
+	  "@suns-echoes/file-system-utils": "^0.5.1",
+	  "babel-eslint": "^10.0.3",
+	  "babel-plugin-istanbul": "^5.2.0",
+	  "chai": "^4.2.0",
+	  "cross-env": "^5.2.0",
+	  "eslint": "^6.2.2",
+	  "esm": "^3.2.25",
+	  "mocha": "^6.2.0",
+	  "nyc": "^14.1.1",
+	  "rollup": "^1.17.0"
+	}
   }
-}
