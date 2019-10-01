@@ -1,4 +1,6 @@
-import { exec } from './exec.js';
+import { exec } from './exec';
 
 
-export default exec;
+export {
+	exec,
+};
