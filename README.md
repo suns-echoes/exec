@@ -9,40 +9,6 @@ Note: The stderr and stdout is concatenated into output property. The end of thi
 
 Note: The stderr is concatenated into output error property. The end of error is trimmed.
 
-```js
-/* Promise */ exec(
-	/* string */ cmd,
-	/* array */ [args],
-	/* object */ [config]
-)
-```
-
-
-Arguments
----------
-
-* `<string>` `cmd` - entity path;
-* `<array>` `[args]` - optional, entity path;
-* `<object>` `[config]` - optional, entity path:
-	* `<bool>` `[buffer=true]` - optional, enable unified output;
-	* `<function>` `[stderr=null]` - optional, stderr callback;
-	* `<function>` `[stdout=null]` - optional, stdout callback.
-
-
-Resolves
---------
-
-* `<object>` - exit information:
-	* `<number>` `code` - exit code
-	* `<string>` `error` - error output
-	* `<string>` `output` - unified output (concatenated stderr and stdout)
-
-
-Returns
--------
-
-* `<Promise>` - the promise of execution.
-
 
 Installation
 ------------
@@ -50,25 +16,52 @@ Installation
 `npm i @suns-echoes/exec`
 
 
+Impport
+-------
+
+```js
+// Import library distribution file
+import { exec } from '@suns-echoes/exec';
+```
+
+```js
+// Import library from source
+import { exec } from './libs/@suns-echoes/exec/src';
+// or
+import { exec } from './libs/@suns-echoes/exec/src/exec';
+```
+
+
 Usage
 -----
 
-```js
-// CommonJS library distribution file (only default export)
-import exec from '@suns-echoes/exec';
-// or
-const exec = require('@suns-echoes/exec');
-```
 
 ```js
-// import library from source (default export)
-import exec from './libs/@suns-echoes/exec/src/index.js';
+const { code, error, output } = await exec(cmd, [...args], { buffer, stderr, stdout });
 ```
 
-```js
-// import library from source (named export)
-import { exec } from './libs/@suns-echoes/exec/src/exec.js';
-```
+
+### Arguments
+
+* `<string>` `cmd` - entity path;
+* `<array>` `[args]` - optional, entity path;
+* `<object>` `[config]` - optional, entity path:
+	* `<boolean>` `[buffer=true]` - optional, enable unified output;
+	* `<function>` `[stderr=null]` - optional, stderr callback;
+	* `<function>` `[stdout=null]` - optional, stdout callback.
+
+
+### Returns
+
+* `<Promise>` - the promise of execution.
+
+
+### Resolves
+
+* `<object>` - exit information:
+	* `<number>` `code` - exit code
+	* `<string>` `error` - error output
+	* `<string>` `output` - unified output (concatenated stderr and stdout)
 
 
 Examples
@@ -100,18 +93,6 @@ await exec('some_command', ['possible', 'params'], {
 	stdout: (data) => { ... },
 });
 ```
-
-
-Methods
--------
-
-### Async
-
-* exec
-
-### Sync
-
-* *None by now, use **async** ;)*
 
 
 License
