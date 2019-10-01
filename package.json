@@ -1,6 +1,6 @@
 {
 	"name": "@suns-echoes/exec",
-	"version": "0.1.2",
+	"version": "0.2.0",
 	"description": "Exec Utility",
 	"scripts": {
 		"coverage": "cross-env NODE_ENV=test nyc mocha --config .mocharc.src.json",
