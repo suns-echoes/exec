@@ -1,13 +1,8 @@
-import { copy } from '@suns-echoes/file-system-utils/src/utils/copy.js';
+import { copy } from '@suns-echoes/file-system-utils/src/utils/copy';
 
-import { config } from '../config.js';
-
-
-const filter = (src) => {
-	return !(/\.(example|spec)\.js$/.test(src));
-};
+import { config } from '../config';
 
 
 export async function copySourceFiles() {
-	return await copy(config.paths.src.input, config.paths.src.output, filter);
+	await copy(config.paths.src.input, config.paths.src.output);
 }

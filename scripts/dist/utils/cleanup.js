@@ -1,8 +1,8 @@
-import { remove } from '@suns-echoes/file-system-utils/src/utils/remove.js';
+import { remove } from '@suns-echoes/file-system-utils/src/utils/remove';
 
-import { config } from '../config.js';
+import { config } from '../config';
 
 
 export async function cleanup() {
-	return await remove(config.paths.dist);
+	await remove(config.paths.dist);
 }

@@ -1,11 +1,16 @@
-import { readJSONFile } from '@suns-echoes/file-system-utils/src/utils/read-json-file.js';
-import { writeJSONFile } from '@suns-echoes/file-system-utils/src/utils/write-json-file.js';
+import fs from 'fs';
+import { promisify } from 'util';
 
-import { config } from '../config.js';
+import { config } from '../config';
+
+
+const readFile = promisify(fs.readFile);
+const writeFile = promisify(fs.writeFile);
 
 
 const whitelist = [
 	'name',
+	'main',
 	'version',
 	'description',
 	'homepage',
@@ -17,7 +22,8 @@ const whitelist = [
 
 
 export async function createPackageFile() {
-	const pkg = await readJSONFile('./package.json');
+	const pkgFile = await readFile('./package.json', 'utf8');
+	const pkg = JSON.parse(pkgFile);
 
 	Object.keys(pkg).forEach((key) => {
 		if (!whitelist.includes(key)) {
@@ -25,5 +31,7 @@ export async function createPackageFile() {
 		}
 	});
 
-	await writeJSONFile(`${config.paths.dist}/package.json`, pkg, null, '  ');
+	const data = JSON.stringify(pkg, null, '  ');
+
+	await writeFile(`${config.paths.dist}/package.json`, data, { encoding: 'utf8' });
 }
