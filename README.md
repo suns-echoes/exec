@@ -26,9 +26,9 @@ import { exec } from '@suns-echoes/exec';
 
 ```js
 // Import library from source
-import { exec } from './libs/@suns-echoes/exec/src';
+import { exec } from '@suns-echoes/exec/src';
 // or
-import { exec } from './libs/@suns-echoes/exec/src/exec';
+import { exec } from '@suns-echoes/exec/src/exec';
 ```
 
 
